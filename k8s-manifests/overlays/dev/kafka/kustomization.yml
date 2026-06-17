@@ -15,3 +15,10 @@ nameSuffix: -dev
 #       - op: replace
 #         path: /spec/replicas
 #         value: 1
+patches:
+  - target:
+      kind: KafkaNodePool
+    patch: |-
+      - op: replace
+        path: /metadata/labels/strimzi.io~1cluster
+        value: superapp-cluster-dev
